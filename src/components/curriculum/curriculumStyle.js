@@ -7,10 +7,10 @@ export const DivClear = styled.div`
 export const CurriculumBody = styled.div`
   margin: 0;
   padding: 0;
-  color: #222;
+  color: ${props => props.color('textColor')};
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  background: #fff;
+  background: ${props => props.color('backgroundColor')};
   font-family: 'Ubuntu Mono Regular', monospace;
 `;

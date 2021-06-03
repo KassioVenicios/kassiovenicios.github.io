@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import './curriculum.css';
+import { ThemeContext } from '../theme/theme';
 import { LangContext } from '../language/language';
 import {CurriculumData as data} from './curriculumData';
 import {
@@ -10,9 +11,10 @@ import {
 export default function Curriculum() {
 
   const {text} = useContext(LangContext);
+  const {color} = useContext(ThemeContext);
 
   return (
-    <CurriculumBody>
+    <CurriculumBody color={color}>
       <div id="main">
         <div id="photo">
           <img src={data.photo.url} alt={data.photo.description} />
