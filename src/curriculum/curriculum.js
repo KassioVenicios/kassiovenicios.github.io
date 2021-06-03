@@ -1,32 +1,36 @@
 import React from 'react';
 import './curriculum.css';
+import {
+  CurriculumData as data,
+  CurriculumText as text,
+} from './curriculumData';
 
 export default function Curriculum() {
   return (
     <body class="lang-pt">
       <div id="main">
         <div id="photo">
-          <img src="..." alt="" />
+          <img src={data.photo.url} alt={data.photo.description} />
         </div>
         <div class="header photo">
           <h1 id="title">
-            Kássio Venícios Alves Carvalho
-            <span class="email">kassio_venicios@hotmail.com</span>
+            {data.name}
+            <span class="email">{data.contact.email}</span>
           </h1>
           <div class="basic-info section">
             <div class="set">
               <p class="address">
                 <span class="value">
-                Promorar
+                {data.address.district}
                 <br />
-                Teresina - Piauí
+                {`${data.address.city} - ${data.address.state}`}
                 <br />
-                Brasil </span>
+                {data.address.country} </span>
               </p>
               <div class="r">
                 <p class="phone">
-                  <label>Telefone<span class="colon">:</span></label>
-                  <span class="value">+55 (86) 99828-6400</span>
+                  <label>{text('phone')}<span class="colon">:</span></label>
+                  <span class="value">{data.contact.phone}</span>
                 </p>
               </div>
               <div class="clear" />
@@ -37,38 +41,41 @@ export default function Curriculum() {
         <div class="clear" />
 
         <div class="section section-work">
-          <h2 class="title">Experiência profissional</h2>
+          <h2 class="title">{text('professionalXP')}</h2>
           <div class="set">
-            <div class="item">
-              <h3>
-                <span class="company l">Simples Informática</span>
-                <span class="date r">Julho 2019 — Fevereiro 2020</span>
-              </h3>
-              <div class="clear" />
-              <span class="job_title">Desenvolvedor Front-end</span>
-              <div class="info">
-                <ul>
-                  <li>
-                    Descrição.
-                  </li>
-                  <li>Tecnologias.</li>
-                </ul>
-              </div>
-              <div class="clear" />
-            </div>
+            {
+              data.professionalXP.map(company => (
+                <div class="item">
+                  <h3>
+                    <span class="company l">{company.companyName}</span>
+                    <span class="date r">
+                      {`${company.startDate.month} ${company.startDate.year}`}
+                      {` — ${company.endDate.month} ${company.endDate.year}`}
+                    </span>
+                  </h3>
+                  <div class="clear" />
+                  <span class="job_title">{company.responsability}</span>
+                  <div class="info">
+                    <ul>
+                      <li>{company.jobDescription}</li>
+                      <li>{company.tools}</li>
+                    </ul>
+                  </div>
+                  <div class="clear" />
+                </div>
+              ))
+            }
           </div>
           <div class="clear" />
         </div>
 
         <div class="section section-qualifications">
-          <h2 class="title">Qualificações</h2>
+          <h2 class="title">{text('qualifications')}</h2>
           <div class="set">
             <div class="item">
               <span class="info">
                 <ul>
-                  <li>Qualificação 1.</li>
-                  <li>Qualificação 2.</li>
-                  <li>...</li>
+                  {data.qualifications.map(q => <li>{q}</li>)}
                 </ul>
               </span>
             </div>
@@ -77,44 +84,36 @@ export default function Curriculum() {
         </div>
 
         <div class="section section-education">
-          <h2 class="title">Educação</h2>
+          <h2 class="title">{text('education')}</h2>
           <div class="set">
-            <div class="item">
-              <h3>
-                <span class="course l">Graduado em Ciência da Computação</span>
-                <span class="date r">Março 2015 — Junho 2019</span>
-              </h3>
-              <div class="clear" />
-              <span class="school">Universidade Federal do Piauí</span>
-              <div class="info">
-                <ul>
-                  <li>Projetos na Universidade.</li>
-                  <li>2018 – 2019: ...</li>
-                  <li>2017 – 2018: ...</li>
-                  <li>...</li>
-                </ul>
-              </div>
-              <span class="clear" />
-            </div>
-
-            <br />
-
-            <div class="item">
-              <h3>
-                <span class="course l">Ensino Médio (2º grau)</span>
-                <span class="date r">2012 - 2014: Colégio Certo, Teresina - PI, Brasil.</span>
-              </h3>
-              <div class="clear" />
-            </div>
+            {
+              data.education.map(edu => (
+                <div class="item">
+                  <h3>
+                    <span class="course l">{edu.title}</span>
+                    <span class="date r">
+                      {`${edu.startDate.month} ${edu.startDate.year}`}
+                      {` — ${edu.endDate.month} ${edu.endDate.year}`}
+                    </span>
+                  </h3>
+                  <div class="clear" />
+                  <span class="school">{edu.institution}</span>
+                  <div class="info">
+                    <ul>
+                      {edu.projects.map(proj => <li>{proj}</li>)}
+                    </ul>
+                  </div>
+                  <span class="clear" />
+                </div>
+              ))
+            }
 
             <div class="item">
               <h3>
-                <span class="course l">Cursos de extensão na área de interesse do curso de Ciência da Computação:</span>
+                <span class="course l">{text('extensionCourses')}</span>
                 <span class="date r">
                   <ul>
-                    <li>Minicurso de programação em Django.</li>
-                    <li>HACKATRUCK EAD: Conceitos e Fundamentos: Lógica de Programação, Orientação a Objetos e SWIFT</li>
-                    <li>HACKATRUCK PRESENCIAL: Fundamentos e Práticas na Linguagem de Programação Swift.</li>
+                    {data.extensionCourses.map(course => <li>{course}</li>)}
                   </ul>
                 </span>
               </h3>
@@ -125,14 +124,12 @@ export default function Curriculum() {
         </div>
 
         <div class="section section-interests">
-          <h2 class="title">Interesses</h2>
+          <h2 class="title">{text('interests')}</h2>
           <div class="set">
             <div class="item">
               <span class="info">
                 <ul>
-                  <li>Meus Interesses.</li>
-                  <li>...</li>
-                  <li>Disponibilidade de trabalhar remotamente.</li>
+                  {data.interests.map(interest => <li>{interest}</li>)}
                 </ul>
               </span>
             </div>
