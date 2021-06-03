@@ -3,11 +3,13 @@ import React, {useState} from 'react';
 const colorsDark = {
   textColor: '#ddd',
   backgroundColor: '#222',
+  boxShadowColor: '#444',
 };
 
 const colorsLight = {
   textColor: '#222',
   backgroundColor: '#fff',
+  boxShadowColor: '#ccc',
 };
 
 const themes = {

@@ -4,6 +4,7 @@ import { ThemeContext } from '../theme/theme';
 import { LangContext } from '../language/language';
 import {CurriculumData as data} from './curriculumData';
 import {
+  Body,
   DivClear,
   CurriculumBody,
 } from './curriculumStyle';
@@ -14,8 +15,8 @@ export default function Curriculum() {
   const {color} = useContext(ThemeContext);
 
   return (
-    <CurriculumBody color={color}>
-      <div id="main">
+    <Body color={color}>
+      <CurriculumBody color={color}>
         <div id="photo">
           <img src={data.photo.url} alt={data.photo.description} />
         </div>
@@ -154,7 +155,7 @@ export default function Curriculum() {
           </div>
           <DivClear />
         </div>
-      </div>
-    </CurriculumBody>
+      </CurriculumBody>
+    </Body>
   );
 }
