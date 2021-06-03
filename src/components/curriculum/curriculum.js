@@ -2,13 +2,17 @@ import React, { useContext } from 'react';
 import './curriculum.css';
 import { LangContext } from '../language/language';
 import {CurriculumData as data} from './curriculumData';
+import {
+  DivClear,
+  CurriculumBody,
+} from './curriculumStyle';
 
 export default function Curriculum() {
 
   const {text} = useContext(LangContext);
 
   return (
-    <body class="lang-pt">
+    <CurriculumBody>
       <div id="main">
         <div id="photo">
           <img src={data.photo.url} alt={data.photo.description} />
@@ -34,12 +38,12 @@ export default function Curriculum() {
                   <span class="value">{data.contact.phone}</span>
                 </p>
               </div>
-              <div class="clear" />
+              <DivClear />
             </div>
-            <div class="clear" />
+            <DivClear />
           </div>
         </div>
-        <div class="clear" />
+        <DivClear />
 
         <div class="section section-work">
           <h2 class="title">{text('professionalXP')}</h2>
@@ -61,7 +65,7 @@ export default function Curriculum() {
                       }
                     </span>
                   </h3>
-                  <div class="clear" />
+                  <DivClear />
                   <span class="job_title">{company.responsability}</span>
                   <div class="info">
                     <ul>
@@ -69,12 +73,12 @@ export default function Curriculum() {
                       <li>{company.tools}</li>
                     </ul>
                   </div>
-                  <div class="clear" />
+                  <DivClear />
                 </div>
               ))
             }
           </div>
-          <div class="clear" />
+          <DivClear />
         </div>
 
         <div class="section section-qualifications">
@@ -88,7 +92,7 @@ export default function Curriculum() {
               </span>
             </div>
           </div>
-          <div class="clear" />
+          <DivClear />
         </div>
 
         <div class="section section-education">
@@ -108,7 +112,7 @@ export default function Curriculum() {
                       }
                     </span>
                   </h3>
-                  <div class="clear" />
+                  <DivClear />
                   <span class="school">{edu.institution}</span>
                   <div class="info">
                     <ul>
@@ -129,10 +133,10 @@ export default function Curriculum() {
                   </ul>
                 </span>
               </h3>
-              <div class="clear" />
+              <DivClear />
             </div>
           </div>
-          <div class="clear" />
+          <DivClear />
         </div>
 
         <div class="section section-interests">
@@ -146,9 +150,9 @@ export default function Curriculum() {
               </span>
             </div>
           </div>
-          <div class="clear" />
+          <DivClear />
         </div>
       </div>
-    </body>
+    </CurriculumBody>
   );
 }
