@@ -171,19 +171,49 @@ const lang = 'pt-br';
 const CurriculumTextPtBr = {
   phone: 'Telefone',
   professionalXP: 'Experiência profissional',
+  current: 'Atual',
   qualifications: 'Qualificações',
   education: 'Educação',
   extensionCourses: 'Cursos de extensão na área de interesse do curso de Ciência da Computação:',
   interests: 'Interesses',
+  months: [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro',
+  ],
 };
 
 const CurriculumTextEnUs = {
   phone: 'Phone',
   professionalXP: 'Professional experience',
+  current: 'Current',
   qualifications: 'Qualifications',
   education: 'Education',
   extensionCourses: 'Extension courses in the Computer Science area of interest:',
   interests: 'Interests',
+  months: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December', 
+  ],
 };
 
 const text = {

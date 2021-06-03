@@ -49,8 +49,15 @@ export default function Curriculum() {
                   <h3>
                     <span class="company l">{company.companyName}</span>
                     <span class="date r">
-                      {`${company.startDate.month} ${company.startDate.year}`}
-                      {` — ${company.endDate.month} ${company.endDate.year}`}
+                      {
+                        text('months')[company.startDate.month]
+                        + ' ' + company.startDate.year
+                      }
+                      {
+                        company.endDate.current ?
+                          ` — ${text('current')}` :
+                          ` — ${text('months')[company.endDate.month]} ${company.endDate.year}`
+                      }
                     </span>
                   </h3>
                   <div class="clear" />
@@ -92,8 +99,12 @@ export default function Curriculum() {
                   <h3>
                     <span class="course l">{edu.title}</span>
                     <span class="date r">
-                      {`${edu.startDate.month} ${edu.startDate.year}`}
-                      {` — ${edu.endDate.month} ${edu.endDate.year}`}
+                      {
+                        text('months')[edu.startDate.month] + ' ' +
+                        edu.startDate.year + ' — ' +
+                        text('months')[edu.endDate.month] + ' ' +
+                        edu.endDate.year
+                      }
                     </span>
                   </h3>
                   <div class="clear" />
