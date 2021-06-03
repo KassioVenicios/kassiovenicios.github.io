@@ -7,11 +7,11 @@ export const DivClear = styled.div`
 export const Body = styled.div`
   margin: 0;
   padding: 0;
-  color: ${props => props.color('textColor')};
+  color: ${props => props.textColor};
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  background-color: ${props => props.color('backgroundColor')};
+  background-color: ${props => props.backgroundColor};
   font-family: 'Ubuntu Mono Regular', monospace;
 `;
 
@@ -20,8 +20,8 @@ export const CurriculumBody = styled.div`
   padding: 35px;
   overflow: hidden;
   margin: 0 auto 0 auto;
-  background-color: ${props => props.color('backgroundColor')};
-  box-shadow: 0 0 6px ${props => props.color('boxShadowColor')};
+  background-color: ${props => props.backgroundColor};
+  box-shadow: 0 0 6px ${props => props.boxShadowColor};
 `;
 
 export const Title = styled.h1`
@@ -29,7 +29,7 @@ export const Title = styled.h1`
   padding-bottom: 30px;
   margin: 0px 0 30px 0;
   margin-left: 220px;
-  border-bottom: 3px solid ${props => props.color('textColor')};
+  border-bottom: 3px solid ${props => props.textColor};
 `;
 
 export const Email = styled.span`

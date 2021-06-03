@@ -17,13 +17,17 @@ export default function Curriculum() {
   const {color} = useContext(ThemeContext);
 
   return (
-    <Body color={color}>
-      <CurriculumBody color={color}>
+    <Body
+      textColor={color('textColor')}
+      backgroundColor={color('backgroundColor')}>
+      <CurriculumBody
+        boxShadowColor={color('boxShadowColor')}
+        backgroundColor={color('backgroundColor')}>
         <div id="photo">
           <img src={data.photo.url} alt={data.photo.description} />
         </div>
         <div className="header photo">
-          <Title color={color}>
+          <Title textColor={color('textColor')}>
             {data.name}
             <Email>{data.contact.email}</Email>
           </Title>
