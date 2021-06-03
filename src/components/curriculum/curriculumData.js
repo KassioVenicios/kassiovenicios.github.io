@@ -166,9 +166,7 @@ export const CurriculumData = {
   ],
 };
 
-const lang = 'pt-br';
-
-const CurriculumTextPtBr = {
+export const CurriculumTextPtBr = {
   phone: 'Telefone',
   professionalXP: 'Experiência profissional',
   current: 'Atual',
@@ -192,7 +190,7 @@ const CurriculumTextPtBr = {
   ],
 };
 
-const CurriculumTextEnUs = {
+export const CurriculumTextEnUs = {
   phone: 'Phone',
   professionalXP: 'Professional experience',
   current: 'Current',
@@ -215,10 +213,3 @@ const CurriculumTextEnUs = {
     'December', 
   ],
 };
-
-const text = {
-  'pt-br': CurriculumTextPtBr,
-  'en-us': CurriculumTextEnUs,
-};
-
-export const CurriculumText = key => text[lang][key];

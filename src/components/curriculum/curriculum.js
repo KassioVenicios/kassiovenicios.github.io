@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './curriculum.css';
-import {
-  CurriculumData as data,
-  CurriculumText as text,
-} from './curriculumData';
+import { LangContext } from '../language/language';
+import {CurriculumData as data} from './curriculumData';
 
 export default function Curriculum() {
+
+  const {text} = useContext(LangContext);
+
   return (
     <body class="lang-pt">
       <div id="main">
