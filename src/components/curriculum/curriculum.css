@@ -30,24 +30,6 @@ ul {
   list-style-type: square;
 }
 
-#title {
-  line-height: 46px;
-  border-bottom: 3px solid #222;
-  padding-bottom: 30px;
-  margin: 0px 0 30px 0;
-}
-
-#title .c {
-  display: block;
-}
-
-#title .email {
-  font-size: 20px;
-  font-weight: 100;
-  display: block;
-  line-height: 30px;
-}
-
 p label {
   font-weight: 500;
   font-size: 110%;
@@ -170,10 +152,6 @@ p label span.colon {
 
 .header {
   margin-bottom: 40px;
-}
-
-.header.photo #title {
-  margin-left: 220px;
 }
 
 .header.photo .basic-info {

@@ -5,8 +5,10 @@ import { LangContext } from '../language/language';
 import {CurriculumData as data} from './curriculumData';
 import {
   Body,
-  DivClear,
   CurriculumBody,
+  DivClear,
+  Email,
+  Title,
 } from './curriculumStyle';
 
 export default function Curriculum() {
@@ -21,10 +23,10 @@ export default function Curriculum() {
           <img src={data.photo.url} alt={data.photo.description} />
         </div>
         <div class="header photo">
-          <h1 id="title">
+          <Title color={color}>
             {data.name}
-            <span class="email">{data.contact.email}</span>
-          </h1>
+            <Email>{data.contact.email}</Email>
+          </Title>
           <div class="basic-info section">
             <div class="set">
               <p class="address">
