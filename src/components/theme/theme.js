@@ -20,7 +20,7 @@ const themes = {
 export const ThemeContext = React.createContext();
 
 export function ThemeStore({children}) {
-  const defaultTheme = 'light';
+  const defaultTheme = 'dark';
   const [theme, setTheme] = useState(defaultTheme);
 
   const color = name => themes[theme][name];
