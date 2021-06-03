@@ -22,25 +22,25 @@ export default function Curriculum() {
         <div id="photo">
           <img src={data.photo.url} alt={data.photo.description} />
         </div>
-        <div class="header photo">
+        <div className="header photo">
           <Title color={color}>
             {data.name}
             <Email>{data.contact.email}</Email>
           </Title>
-          <div class="basic-info section">
-            <div class="set">
-              <p class="address">
-                <span class="value">
+          <div className="basic-info section">
+            <div className="set">
+              <p className="address">
+                <span className="value">
                 {data.address.district}
                 <br />
                 {`${data.address.city} - ${data.address.state}`}
                 <br />
                 {data.address.country} </span>
               </p>
-              <div class="r">
-                <p class="phone">
-                  <label>{text('phone')}<span class="colon">:</span></label>
-                  <span class="value">{data.contact.phone}</span>
+              <div className="r">
+                <p className="phone">
+                  <label>{text('phone')}<span className="colon">:</span></label>
+                  <span className="value">{data.contact.phone}</span>
                 </p>
               </div>
               <DivClear />
@@ -50,15 +50,15 @@ export default function Curriculum() {
         </div>
         <DivClear />
 
-        <div class="section section-work">
-          <h2 class="title">{text('professionalXP')}</h2>
-          <div class="set">
+        <div className="section section-work">
+          <h2 className="title">{text('professionalXP')}</h2>
+          <div className="set">
             {
               data.professionalXP.map(company => (
-                <div class="item">
+                <div className="item" key={company.companyName}>
                   <h3>
-                    <span class="company l">{company.companyName}</span>
-                    <span class="date r">
+                    <span className="company l">{company.companyName}</span>
+                    <span className="date r">
                       {
                         text('months')[company.startDate.month-1]
                         + ' ' + company.startDate.year
@@ -71,8 +71,8 @@ export default function Curriculum() {
                     </span>
                   </h3>
                   <DivClear />
-                  <span class="job_title">{company.responsability}</span>
-                  <div class="info">
+                  <span className="job_title">{company.responsability}</span>
+                  <div className="info">
                     <ul>
                       <li>{company.jobDescription}</li>
                       <li>{company.tools}</li>
@@ -86,13 +86,13 @@ export default function Curriculum() {
           <DivClear />
         </div>
 
-        <div class="section section-qualifications">
-          <h2 class="title">{text('qualifications')}</h2>
-          <div class="set">
-            <div class="item">
-              <span class="info">
+        <div className="section section-qualifications">
+          <h2 className="title">{text('qualifications')}</h2>
+          <div className="set">
+            <div className="item">
+              <span className="info">
                 <ul>
-                  {data.qualifications.map(q => <li>{q}</li>)}
+                  {data.qualifications.map(q => <li key={q}>{q}</li>)}
                 </ul>
               </span>
             </div>
@@ -100,15 +100,15 @@ export default function Curriculum() {
           <DivClear />
         </div>
 
-        <div class="section section-education">
-          <h2 class="title">{text('education')}</h2>
-          <div class="set">
+        <div className="section section-education">
+          <h2 className="title">{text('education')}</h2>
+          <div className="set">
             {
               data.education.map(edu => (
-                <div class="item">
+                <div className="item" key={edu.title}>
                   <h3>
-                    <span class="course l">{edu.title}</span>
-                    <span class="date r">
+                    <span className="course l">{edu.title}</span>
+                    <span className="date r">
                       {
                         text('months')[edu.startDate.month-1] + ' ' +
                         edu.startDate.year + ' — ' +
@@ -118,23 +118,27 @@ export default function Curriculum() {
                     </span>
                   </h3>
                   <DivClear />
-                  <span class="school">{edu.institution}</span>
-                  <div class="info">
+                  <span className="school">{edu.institution}</span>
+                  <div className="info">
                     <ul>
-                      {edu.projects.map(proj => <li>{proj}</li>)}
+                      {edu.projects.map(proj => <li key={proj}>{proj}</li>)}
                     </ul>
                   </div>
-                  <span class="clear" />
+                  <span className="clear" />
                 </div>
               ))
             }
 
-            <div class="item">
+            <div className="item">
               <h3>
-                <span class="course l">{text('extensionCourses')}</span>
-                <span class="date r">
+                <span className="course l">{text('extensionCourses')}</span>
+                <span className="date r">
                   <ul>
-                    {data.extensionCourses.map(course => <li>{course}</li>)}
+                    {
+                      data.extensionCourses.map(course =>
+                        <li key={course}>{course}</li>
+                      )
+                    }
                   </ul>
                 </span>
               </h3>
@@ -144,13 +148,13 @@ export default function Curriculum() {
           <DivClear />
         </div>
 
-        <div class="section section-interests">
-          <h2 class="title">{text('interests')}</h2>
-          <div class="set">
-            <div class="item">
-              <span class="info">
+        <div className="section section-interests">
+          <h2 className="title">{text('interests')}</h2>
+          <div className="set">
+            <div className="item">
+              <span className="info">
                 <ul>
-                  {data.interests.map(interest => <li>{interest}</li>)}
+                  {data.interests.map(interest => <li key={interest}>{interest}</li>)}
                 </ul>
               </span>
             </div>
